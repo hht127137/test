@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 解决加载闪烁时出现vue标签和指令符号问题 -->
+		<div id="app" v-cloak>
+			{{name}}
+			<input type="text" v-model="name"/>
+		</div>
+		<script type="text/javascript" src="https://unpkg.com/vue"></script>
+		<script>
+			new Vue({
+				el:"#app",
+				data(){
+				   return{
+					   name:"xiaobu"
+				   }
+				}
+			})
+		</script>
+	</body>
+</html>

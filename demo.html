@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text"/>
+		<div id="text"></div>
+		<script>
+			var text=document.getElementById("text");
+			var data={};
+			var value="";
+			Object.defineProperty(data,"name",{
+				get(){
+					return value
+				},
+				//监听数据发生变化
+				set(val){
+					text.innerHTML=val;
+					value=val;
+				}
+			})
+			window.addEventListener("input",function(e){
+				data.name=e.target.value;
+				console.log(data.name)
+			})
+		</script>
+	</body>
+</html>
